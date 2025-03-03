@@ -1,0 +1,75 @@
+﻿<Window x:Class="DBPaulMain.OpenOrCreate"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DBPaulMain"
+        mc:Ignorable="d"
+        Title="OpenOrCreate" Height="415" Width="415">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border Grid.ColumnSpan="5" Grid.RowSpan="5" Background="WhiteSmoke">
+            <StackPanel Grid.ColumnSpan="5" Grid.RowSpan="5" Margin="10">
+                <DockPanel Margin="0 5">
+                    <TextBlock Text="Request Number "/>
+                    <TextBox Name="tb_number" IsEnabled="False"/>
+                </DockPanel>
+                <DockPanel Margin="0 5">
+                    <TextBlock Text="Date of creation " VerticalAlignment="Center"/>
+                    <DatePicker Name="dp_CreationDate"/>
+                </DockPanel>
+                <DockPanel Margin="0 5">
+                    <TextBlock Text="Type of device "/>
+                    <ComboBox Name="cb_type"/>
+                </DockPanel>
+                <DockPanel Margin="0 5">
+                    <TextBlock Text="Model "/>
+                    <TextBox Name="tb_model"/>
+                </DockPanel>
+                <DockPanel Margin="0 5" Height="80">
+                    <TextBlock Text="Description " VerticalAlignment="Center"/>
+                    <TextBox Name="tb_description"/>
+                </DockPanel>
+                <DockPanel Margin="0 5">
+                    <TextBlock Text="Client's name "/>
+                    <TextBox Name="tb_name"/>
+                </DockPanel>
+                <DockPanel Margin="0 5">
+                    <TextBlock Text="Contact number "/>
+                    <TextBox Name="tb_cNumber"/>
+                </DockPanel>
+                <DockPanel Margin="0 5">
+                    <TextBlock Text="Status "/>
+                    <ComboBox Name="cb_status"/>
+                </DockPanel>
+                <DockPanel Margin="0 5">
+                    <TextBlock Text="Repair man " DockPanel.Dock="Left" 
+                               TextAlignment="Center"/>
+                    <Border BorderBrush="Black" BorderThickness="1">
+                        <TextBlock Name="tBlock_repairMan" IsEnabled="False" 
+                                   DockPanel.Dock="Left" Width="280" Text="{Binding selectedMan}"/>
+                    </Border>
+                    <Button Name="bt_repairMan" Content="Edit" DockPanel.Dock="Right" Click="bt_repairMan_Click"/>
+                </DockPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Name="bt_save" Content="Save" Margin="5 0" Click="bt_save_Click"/>
+                    <Button Name="bt_cancel" Content="Cancel" Margin="5 0"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
